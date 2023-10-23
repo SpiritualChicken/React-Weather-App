@@ -18,6 +18,10 @@ const displayTemp = Math.floor(temp)
             setHumidity(data.main.humidity)
           });
       }, []);
+
+      function handleClick () {
+        console.log(city.name, "was clicked")
+      }
     
     return (
         <div>
@@ -25,6 +29,7 @@ const displayTemp = Math.floor(temp)
             <p>Temperature: {displayTemp}°C</p>
             <p>Wind speed: {windSpeed}km/h</p>
             <p>Humidity: {humidity}%</p>
+            <button onClick={handleClick}>*</button>
         </div>
     )
 }
