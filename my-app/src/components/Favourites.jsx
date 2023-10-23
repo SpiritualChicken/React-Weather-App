@@ -1,8 +1,8 @@
 import React from "react";
 
 function Favourites () {
-    return (
-        <h1>Favourite</h1>
+    return(
+        <h1>the favorite page </h1>
     )
 }
 

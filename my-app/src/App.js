@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import NavBar from './components/NavBar';
 import React, { useState } from 'react';
@@ -14,13 +14,13 @@ function App() {
     <div> 
     <NavBar onChangePage={setPage} />
     <Switch>
+      <Route path="/favourties"> 
+          <Favourites />
+      </Route>
       <Route exact path="/"> 
         <div className="App">
           <WeatherApp />
         </div>
-      </Route>
-      <Route path="/favourites"> 
-          <Favourites />
       </Route>
     </Switch>
       
