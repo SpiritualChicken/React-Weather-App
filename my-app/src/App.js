@@ -1,25 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import WeatherApp from './components/WeatherApp';
+import Favourites from './components/Favourites';
 
 function App() {
+
+  const [page, setPage] = useState("/")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+    <NavBar onChangePage={setPage} />
+    <Switch>
+      <Route exact path="/"> 
+        <div className="App">
+          <WeatherApp />
+        </div>
+      </Route>
+      <Route path="/favourites"> 
+          <Favourites />
+      </Route>
+    </Switch>
+      
     </div>
   );
 }
+
 
 export default App;
