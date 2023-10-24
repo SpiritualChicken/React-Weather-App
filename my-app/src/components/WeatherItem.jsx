@@ -24,12 +24,12 @@ const displayTemp = Math.floor(temp)
       }
     
     return (
-        <div>
+        <div className="weatherItem">
             <h4>{city.name}</h4>
             <p>Temperature: {displayTemp}°C</p>
             <p>Wind speed: {windSpeed}km/h</p>
             <p>Humidity: {humidity}%</p>
-            <button onClick={handleClick}>*</button>
+            <button onClick={handleClick}>Add to favourite</button>
         </div>
     )
 }

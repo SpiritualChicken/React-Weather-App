@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+.weatherItem {
+  margin: auto;
+  margin-top: 75px;
+  border-radius: 12px;
+  background-image: linear-gradient(180deg, #130754 0%, #3b2f80  100%);
+  width: 20%;
+  float: left; 
+  box-sizing: border-box; 
+  margin: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.weatherIndex {
+  list-style: none;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.pageTitle {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.topBar{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topBar input {
+  display: flex;
+  width:  362px;
+  height: 39px;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  padding-left: 40px;
+  color: grey;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 39px;
+  background: whitesmoke;
+  border-radius: 40px;
+  cursor: pointer;
+
 }
