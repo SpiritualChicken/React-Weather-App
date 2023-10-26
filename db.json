@@ -44,6 +44,58 @@
     {
       "name": "São Paulo",
       "id": 13
+    },
+    {
+      "name": "São Paulo",
+      "id": 14
+    },
+    {
+      "name": "Shanghai",
+      "id": 15
+    },
+    {
+      "name": "Tokyo",
+      "id": 16
+    },
+    {
+      "name": "New York",
+      "id": 17
+    },
+    {
+      "name": "Shanghai",
+      "id": 18
+    },
+    {
+      "name": "New York",
+      "id": 19
+    },
+    {
+      "name": "São Paulo",
+      "id": 20
+    },
+    {
+      "name": "Tokyo",
+      "id": 21
+    },
+    {
+      "name": "Tokyo",
+      "id": 22
+    },
+    {
+      "name": "Shanghai",
+      "id": 23
+    },
+    {
+      "name": "Shanghai",
+      "id": 24
+    },
+    {
+      "name": "Beijing",
+      "id": 25
+    },
+    {
+      "name": "Beijing",
+      "id": 26
     }
   ]
 }

@@ -6,7 +6,7 @@ const [temp, setTemp] = useState(0);
 const [wind, setWind] = useState(0);
 const [humidity, setHumidity]= useState(0);
 const [weatherImg, setWeatherImg ] = useState("")
-const [isFav, setIsFave] = useState(false)
+const [isFave, setIsFave] = useState(false)
 
 const windSpeed = Math.floor(wind * 3.6)
 const displayTemp = Math.floor(temp)
@@ -24,9 +24,9 @@ const displayTemp = Math.floor(temp)
       }, []);
 
     useEffect(() => {
-      fetch(`http://localhost:5000/favourites?name=${name}`)
+      fetch(`http://localhost:5000/favourites?name=${city.name}`)
       .then(resp => resp.json())
-      .then(data => console.log(data))
+      .then(data => setIsFave(!!data.length))
     }, [])
 
       function handleClick () {
@@ -42,7 +42,7 @@ const displayTemp = Math.floor(temp)
        }
         fetch("http://localhost:5000/favourites", options)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => setIsFave(!!data))
       }
 
       
@@ -53,7 +53,7 @@ const displayTemp = Math.floor(temp)
             <p>Temperature: {displayTemp}°C</p>
             <p>Wind speed: {windSpeed}km/h</p>
             <p>Humidity: {humidity}%</p>
-            <button onClick={handleClick}>Add To Favourite</button>
+            <button onClick={handleClick}>{isFave ? "Remove From Favourite" : "Add To Favourite"}</button>
         </div>
     )
 }
