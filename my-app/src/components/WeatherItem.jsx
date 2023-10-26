@@ -25,7 +25,19 @@ const displayTemp = Math.floor(temp)
       // console.log(weatherImg)
 
       function handleClick () {
-        console.log(city.name, "was clicked")
+       // console.log(city.name, "was clicked")
+       const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        bady: JSON.stringify({
+          name: city.name
+        })
+       }
+        fetch("http://localhost:5000/favourites", options)
+        .then(resp => resp.json)
+        .then(data => console.log(data))
       }
 
       
@@ -36,7 +48,7 @@ const displayTemp = Math.floor(temp)
             <p>Temperature: {displayTemp}°C</p>
             <p>Wind speed: {windSpeed}km/h</p>
             <p>Humidity: {humidity}%</p>
-            <button onClick={handleClick}>Add to favourite</button>
+            <button onClick={handleClick}>Add To Favourite</button>
         </div>
     )
 }

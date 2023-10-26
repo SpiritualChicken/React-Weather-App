@@ -40,9 +40,9 @@ function App() {
     <div> 
     <NavBar onChangePage={setPage} />
     <Switch>
-      <Route path="/favourties"> 
+      <Route path="/favourites"> 
           <Favourites />
-      </Route>
+      </Route> 
       <Route exact path="/"> 
         <div className="App">
           <Home majorCities={majorCities} />
