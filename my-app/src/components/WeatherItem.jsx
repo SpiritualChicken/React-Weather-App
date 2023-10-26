@@ -6,6 +6,7 @@ const [temp, setTemp] = useState(0);
 const [wind, setWind] = useState(0);
 const [humidity, setHumidity]= useState(0);
 const [weatherImg, setWeatherImg ] = useState("")
+const [isFav, setIsFave] = useState(false)
 
 const windSpeed = Math.floor(wind * 3.6)
 const displayTemp = Math.floor(temp)
@@ -22,7 +23,11 @@ const displayTemp = Math.floor(temp)
           });
       }, []);
 
-      // console.log(weatherImg)
+    useEffect(() => {
+      fetch(`http://localhost:5000/favourites?name=${name}`)
+      .then(resp => resp.json())
+      .then(data => console.log(data))
+    }, [])
 
       function handleClick () {
        // console.log(city.name, "was clicked")
@@ -31,12 +36,12 @@ const displayTemp = Math.floor(temp)
         headers: {
           "Content-Type": "application/json"
         },
-        bady: JSON.stringify({
-          name: city.name
+        body: JSON.stringify({
+          name: city.name,
         })
        }
         fetch("http://localhost:5000/favourites", options)
-        .then(resp => resp.json)
+        .then(resp => resp.json())
         .then(data => console.log(data))
       }
 
