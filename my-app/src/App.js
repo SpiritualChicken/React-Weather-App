@@ -22,7 +22,7 @@ function App() {
     { id: 4, name: 'São Paulo' },
     { id: 5, name: 'Mumbai' },
     { id: 6, name: 'Beijing' },
-    { id: 7, name: 'Cairo' },
+    { id: 7, name: 'Sydney' },
     { id: 8, name: 'London' },
     { id: 9, name: 'Los Angeles' },
     { id: 10, name: 'Istanbul' },

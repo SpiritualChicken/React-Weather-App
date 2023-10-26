@@ -52,3 +52,10 @@
   cursor: pointer;
 
 }
+
+.weatherImg{
+  height: 70px;
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+}
