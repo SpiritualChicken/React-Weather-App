@@ -22,7 +22,7 @@ const displayTemp = Math.floor(temp)
           });
       }, []);
 
-      console.log(weatherImg)
+      // console.log(weatherImg)
 
       function handleClick () {
         console.log(city.name, "was clicked")

@@ -1,8 +1,12 @@
 import React from "react";
+import Search from "./Search";
 
 function Favourites () {
     return(
-        <h1 className="pageTitle">the favorite page </h1>
+        <div> 
+            <Search />
+            <h1 className="pageTitle">The favorite page </h1>
+        </div>
     )
 }
 

@@ -59,3 +59,21 @@
   display: block;
   margin: 0 auto;
 }
+
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 20px;
+  
+}
+
+.navItem {
+  text-decoration: none;
+  color: black;
+  background-color: whitesmoke; 
+  padding: 1em;
+  border-radius: 40px;
+  font-weight: 500;
+}
