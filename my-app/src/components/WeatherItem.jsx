@@ -23,29 +23,56 @@ const displayTemp = Math.floor(temp)
           });
       }, []);
 
-    useEffect(() => {
+     useEffect(() => {
       fetch(`http://localhost:5000/favourites?name=${city.name}`)
       .then(resp => resp.json())
       .then(data => setIsFave(!!data.length))
-    }, [])
+    }, [], handleClick) 
 
-      function handleClick () {
-       // console.log(city.name, "was clicked")
-       const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name: city.name,
-        })
-       }
+    function handleClick() {
+      if (isFave) {
+        // If it's already a favorite, remove it
+        const options = {
+          method: "DELETE", // Use the DELETE HTTP method
+        };
+    
+        fetch(`http://localhost:5000/favourites/${city.id}`, options)
+          .then((resp) => resp.json())
+          .then((data) => {
+            console.log(city.name)
+            console.log(data)
+            if (data) {
+              setIsFave(false); // Update the state to reflect that it's no longer a favorite
+            } else {
+              console.error("1");
+            }
+          })
+          .catch((error) => {
+            console.error("Error while removing from favorites:", error);
+          });
+      } else {
+        // If it's not a favorite, add it
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: city.name,
+          }),
+        };
+    
         fetch("http://localhost:5000/favourites", options)
-        .then(resp => resp.json())
-        .then(data => setIsFave(!!data))
+          .then((resp) => resp.json())
+          .then((data) => {
+            setIsFave(!!data);
+          })
+          .catch((error) => {
+            console.error("Error while adding to favorites:", error);
+          });
       }
-
-      
+    }
+       
     return (
         <div className="weatherItem">
             <img className="weatherImg"src={WeatherIcons[weatherImg]} alt={`${weatherImg} img`}/>
