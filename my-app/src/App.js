@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
 import Home from './components/Home';
 import Favourites from './components/Favourites';
+import CityWeather from './components/CityWeather';
 
 // API call to city
 //https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key} 
@@ -48,6 +49,7 @@ function App() {
           <Home majorCities={majorCities} />
         </div>
       </Route>
+      <Route path="/city/:cityName" component={CityWeather} />
     </Switch>
       
     </div>
