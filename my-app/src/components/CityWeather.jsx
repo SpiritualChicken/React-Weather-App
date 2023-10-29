@@ -7,10 +7,18 @@ import WeatherIcons from "./WeatherIcons";
 function CityWeather () {
     const { state } = useLocation()
     const [isFave, setIsFave] = useState(false)
-    console.log(state.data)
+    //console.log(state.data)
     const windSpeed = Math.floor(state.data.wind.speed * 3.6)
     const displayTemp = Math.floor(state.data.main.temp)
+    const [weatherImg, setWeatherImg ] = useState("")
 
+     useEffect(() => {
+        if (state && state.data) {
+            const mainWeather = state.data.weather[0].main.toLowerCase();
+            setWeatherImg(mainWeather);
+        }
+    }, [state])
+    
 
     function handleClick() {
         if (isFave) {
@@ -21,8 +29,6 @@ function CityWeather () {
           fetch(`http://localhost:5000/favourites/${state.data.name.id}`, options)
             .then((resp) => resp.json())
             .then((data) => {
-              console.log(state.data.name)
-              console.log(data)
               if (data) {
                 setIsFave(false); 
               } else {
@@ -59,12 +65,30 @@ function CityWeather () {
         <div className="container">
             <Search />
             <div className="deatailWeatherItem">
+                <img className="weatherImg"src={WeatherIcons[weatherImg]} alt={`${weatherImg} img`}/>
+                <div className="weatherTemp">{displayTemp}°C</div>
+                <div className="weatherLoaction">{state.data.name}</div>
+                <div className="dataContainer">
+                    <div className="element">
+                        <img src={WeatherIcons["humidity"]} alt="Humidity Icon" className="icon" />
+                        <div className="data">
+                            <div className="humidtyPercent">{state.data.main.humidity}%</div>
+                            <div className="text">Humidity</div>
+                        </div>
+                    </div>
                 
-                <h4>{state.data.name}</h4>
-                <p>Temperature: {displayTemp}°C</p>
-                <p>Wind speed: {windSpeed}km/h</p>
-                <p>Humidity: {state.data.main.humidity}%</p>
-            <button onClick={handleClick}>{isFave ? "Remove From Favourite" : "Add To Favourite"}</button>
+                
+                    <div className="element">
+                        <img src={WeatherIcons["wind"]} alt="Wind Icon" className="icon" />
+                        <div className="data">
+                            <div className="humidtyPercent">{windSpeed}%</div>
+                            <div className="text">Wind speed</div>
+                        </div>
+                    </div>
+                </div>
+            <div className="buttonContainer">
+                <button onClick={handleClick} className="favouriteButton">{isFave ? "Remove From Favourite" : "Add To Favourite"}</button>
+            </div>
              </div>
         </div>
     )

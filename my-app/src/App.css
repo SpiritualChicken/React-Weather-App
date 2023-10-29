@@ -81,7 +81,7 @@
 .deatailWeatherItem {
   margin: 75px auto;
   margin-top: 75px;
-  height: 400px;
+  height: 750px;
   border-radius: 12px;
   background-image: linear-gradient(180deg, #130754 0%, #3b2f80  100%);
   width: 80%; 
@@ -91,4 +91,75 @@
 
 .container {
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weatherImg {
+  margin-top: 29px;
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+}
+
+.weatherTemp {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 120px;
+  font-weight: 400;
+}
+
+.weatherLoaction {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.dataContainer {
+  margin-top: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.element{
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px
+}
+
+.data{
+  font-size: 34px;
+  font-weight: 400 ;
+}
+
+.text{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.icon{
+  margin-top: 10px;
+
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.favouriteButton{
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  background-color: whitesmoke; 
+  padding: 2em;
+  border-radius: 40px;
+  font-weight: 700;
 }
