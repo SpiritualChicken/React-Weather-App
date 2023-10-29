@@ -8,6 +8,9 @@ function CityWeather () {
     const { state } = useLocation()
     const [isFave, setIsFave] = useState(false)
     console.log(state.data)
+    const windSpeed = Math.floor(state.data.wind.speed * 3.6)
+    const displayTemp = Math.floor(state.data.main.temp)
+
 
     function handleClick() {
         if (isFave) {
@@ -58,9 +61,9 @@ function CityWeather () {
             <div className="deatailWeatherItem">
                 
                 <h4>{state.data.name}</h4>
-                <p>Temperature: {}°C</p>
-                <p>Wind speed: {}km/h</p>
-                <p>Humidity: {}%</p>
+                <p>Temperature: {displayTemp}°C</p>
+                <p>Wind speed: {windSpeed}km/h</p>
+                <p>Humidity: {state.data.main.humidity}%</p>
             <button onClick={handleClick}>{isFave ? "Remove From Favourite" : "Add To Favourite"}</button>
              </div>
         </div>
