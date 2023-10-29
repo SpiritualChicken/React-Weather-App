@@ -50,7 +50,9 @@ function App() {
               <Home majorCities={majorCities} />
             </div>
           </Route>
-          <Route path="/city/:cityName" render={(props) => <CityWeather {...props} />} />
+          <Route path="/city/:cityName">
+            <CityWeather />
+          </Route>
         </Switch>
       </Router>
     </div>

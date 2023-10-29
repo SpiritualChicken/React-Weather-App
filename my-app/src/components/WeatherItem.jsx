@@ -31,9 +31,8 @@ const displayTemp = Math.floor(temp)
 
     function handleClick() {
       if (isFave) {
-        // If it's already a favorite, remove it
         const options = {
-          method: "DELETE", // Use the DELETE HTTP method
+          method: "DELETE",
         };
     
         fetch(`http://localhost:5000/favourites/${city.id}`, options)
@@ -42,7 +41,7 @@ const displayTemp = Math.floor(temp)
             console.log(city.name)
             console.log(data)
             if (data) {
-              setIsFave(false); // Update the state to reflect that it's no longer a favorite
+              setIsFave(false); 
             } else {
               console.error("1");
             }
@@ -51,7 +50,6 @@ const displayTemp = Math.floor(temp)
             console.error("Error while removing from favorites:", error);
           });
       } else {
-        // If it's not a favorite, add it
         const options = {
           method: "POST",
           headers: {

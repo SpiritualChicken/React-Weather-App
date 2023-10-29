@@ -16,6 +16,7 @@ const handleChange = (event) => {
 const handleSubmit = (event) => {
     event.preventDefault(); 
     //setSearchDisplay(true);
+    //history.push(`/city/${inputValue}`)
 
     
 
@@ -23,8 +24,8 @@ const handleSubmit = (event) => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-           history.push(`/city/${inputValue}`)
-        });
+           history.push(`/city/${inputValue}`, { data })
+        }); 
       
 }
     return (
