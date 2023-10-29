@@ -73,12 +73,18 @@ const displayTemp = Math.floor(temp)
        
     return (
         <div className="weatherItem">
-            <img className="weatherImg"src={WeatherIcons[weatherImg]} alt={`${weatherImg} img`}/>
+          <div className="imgContainer">
+            <img className="weatherImgSmall" src={WeatherIcons[weatherImg]} alt={`${weatherImg} img`}/>
+          </div>
+          <div className="centeredContent">
             <h4>{city.name}</h4>
             <p>Temperature: {displayTemp}°C</p>
             <p>Wind speed: {windSpeed}km/h</p>
             <p>Humidity: {humidity}%</p>
-            <button onClick={handleClick}>{isFave ? "Remove From Favourite" : "Add To Favourite"}</button>
+          <div>
+               <button onClick={handleClick} className="indexFaveButon">{isFave ? "Remove From Favourite" : "Add To Favourite"}</button>
+          </div>
+          </div>
         </div>
     )
 }

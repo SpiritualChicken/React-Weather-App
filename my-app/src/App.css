@@ -1,12 +1,50 @@
 .weatherItem {
-  margin: auto;
   margin-top: 75px;
   border-radius: 12px;
+  height: 470px;
   background-image: linear-gradient(180deg, #130754 0%, #3b2f80  100%);
-  width: 20%;
+  width: 17%;
   float: left; 
+  align-items: center;
   box-sizing: border-box; 
   margin: 5px;
+}
+
+.indexContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.imgContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centeredContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.weatherImgSmall {
+  margin-top: 29px;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+}
+
+.indexFaveButon{
+  text-decoration: none;
+  color: black;
+  background-color: whitesmoke; 
+  padding: 1em;
+  border-radius: 40px;
+  font-weight: 500;
+  outline: none;
+  border: none;
 }
 
 
@@ -51,13 +89,6 @@
   border-radius: 40px;
   cursor: pointer;
 
-}
-
-.weatherImg{
-  height: 70px;
-  width: 70px;
-  display: block;
-  margin: 0 auto;
 }
 
 
