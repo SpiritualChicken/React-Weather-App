@@ -65,7 +65,9 @@ function CityWeather () {
         <div className="container">
             <Search />
             <div className="deatailWeatherItem">
-                <img className="weatherImg"src={WeatherIcons[weatherImg]} alt={`${weatherImg} img`}/>
+                <div className="imgContainer">
+                    <img className="weatherImg"src={WeatherIcons[weatherImg]} alt={`${weatherImg} img`}/>
+                </div>
                 <div className="weatherTemp">{displayTemp}°C</div>
                 <div className="weatherLoaction">{state.data.name}</div>
                 <div className="dataContainer">
