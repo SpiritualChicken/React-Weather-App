@@ -20,8 +20,8 @@ function Favourites () {
     return(
         <div className="container"> 
             <Search />
-            <h1 className="pageTitle">The Favourite page</h1>
-            <div className="indexContainer">
+            <h1 className="pageTitle">The Favourites Page</h1>
+            <div className="favouriteIndexContainer">
                 {isFave.map((fave) => ( 
                         <WeatherItem key={fave.id} city={fave}/>
                     ))}

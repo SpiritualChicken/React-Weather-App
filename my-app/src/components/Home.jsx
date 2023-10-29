@@ -7,8 +7,8 @@ function Home ({ majorCities }) {
     return(
        <div className="container"> 
         <Search />
-            <h1 className="pageTitle">Weather at a glance</h1>
-            <div>
+            <h1 className="pageTitle">Weather At A Glance</h1>
+            <div className="indexContainer">
                 <ul className="weatherIndex">
                 {majorCities.map(city => (
                     <WeatherItem key={city.id} city={city}/>
