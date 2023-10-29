@@ -2,7 +2,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Favourites from './components/Favourites';
 import CityWeather from './components/CityWeather';
@@ -38,20 +38,21 @@ function App() {
   }, []);
 
   return (
-    <div> 
-    <NavBar onChangePage={setPage} />
-    <Switch>
-      <Route path="/favourites"> 
-          <Favourites />
-      </Route> 
-      <Route exact path="/"> 
-        <div className="App">
-          <Home majorCities={majorCities} />
-        </div>
-      </Route>
-      <Route path="/city/:cityName" component={CityWeather} />
-    </Switch>
-      
+    <div>
+      <Router>
+      <NavBar onChangePage={setPage} />
+        <Switch>
+          <Route path="/favourites"> 
+            <Favourites />
+          </Route> 
+          <Route exact path="/"> 
+            <div className="App">
+              <Home majorCities={majorCities} />
+            </div>
+          </Route>
+          <Route path="/city/:cityName" render={(props) => <CityWeather {...props} />} />
+        </Switch>
+      </Router>
     </div>
   );
 }

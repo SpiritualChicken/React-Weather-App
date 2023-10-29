@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import searchIcon from '../assets/search.png'; 
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 
 function Search () {
 const [ inputValue, setInputValue ] = useState("")
-const [searchDisplay, setSearchDisplay] = useState(false)
-//const history = useHistory()
+//const [searchDisplay, setSearchDisplay] = useState(false)
+ const history = useHistory()
+
 
 const handleChange = (event) => {
     setInputValue(event.target.value)
 } 
 const handleSubmit = (event) => {
     event.preventDefault(); 
-    setSearchDisplay(true);
+    //setSearchDisplay(true);
 
     
 
@@ -21,7 +23,7 @@ const handleSubmit = (event) => {
         .then((response) => response.json())
         .then((data) => {
             console.log(data)
-            //history.push(`/city/${data.name}`)
+           history.push(`/city/${inputValue}`)
         });
       
 }

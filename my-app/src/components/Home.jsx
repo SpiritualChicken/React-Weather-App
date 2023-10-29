@@ -3,6 +3,7 @@ import WeatherItem from "./WeatherItem";
 import Search from "./Search";
 
 function Home ({ majorCities }) {
+
     return(
        <div> 
         <Search />
