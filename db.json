@@ -1,3 +1,8 @@
 {
-  "favourites": []
+  "favourites": [
+    {
+      "name": "Shanghai",
+      "id": 1
+    }
+  ]
 }
